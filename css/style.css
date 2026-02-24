@@ -1,0 +1,662 @@
+ 
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap');
+
+ :root {
+  --dark-bg: #1a1f2e;
+  --card-bg: #252b3b;
+  --gold: #c9a84c;
+  --gold-light: #e8c96d;
+  --text-muted-custom: #8a94a6;
+  --white: #f5f7fa;
+}
+
+ * {
+  box-sizing: border-box;
+}
+
+body {
+  background: #e8ecf3;
+  font-family: 'DM Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+
+.phone-shell {
+  background: var(--dark-bg);
+  border-radius: 2.5rem;
+  width: 100%;
+  max-width: 390px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  position: relative;
+}
+
+/* =============================================
+   Status Bar
+   ============================================= */
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1.4rem 0.4rem;
+  font-size: 0.75rem;
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.status-bar .icons {
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+/* =============================================
+   Hero Section
+   ============================================= */
+.hero-section {
+  background: linear-gradient(160deg, #2e3650 0%, #1a2035 100%);
+  padding: 1.5rem 1.2rem 1.8rem;
+  text-align: center;
+  position: relative;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 130px;
+  height: 130px;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.avatar-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid var(--gold);
+  overflow: hidden;
+  margin: 0 auto 0.75rem;
+  background: #3a4260;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-placeholder {
+  font-size: 2.2rem;
+  color: var(--gold-light);
+}
+
+.hero-name {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--white);
+  margin-bottom: 0.4rem;
+}
+
+.hero-subtitle {
+  font-size: 0.82rem;
+  color: var(--text-muted-custom);
+  line-height: 1.45;
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+.hero-subtitle strong {
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+/* =============================================
+   Members Grid
+   ============================================= */
+.members-section {
+  background: var(--card-bg);
+  padding: 1rem 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.member-card {
+  background: var(--dark-bg);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.member-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.member-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #3a4260;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  border: 2px solid var(--gold);
+}
+
+.member-name {
+  font-size: 0.72rem;
+  color: var(--white);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.member-score {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+/* =============================================
+   Recommendation Section
+   ============================================= */
+.recommendation-section {
+  padding: 1.2rem 1.2rem 0.5rem;
+}
+
+.rec-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 0.4rem;
+}
+
+.rec-text {
+  font-size: 0.78rem;
+  color: var(--text-muted-custom);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.rec-text .yellow {
+  color: var(--gold-light);
+}
+
+/* =============================================
+   Membership Cards
+   ============================================= */
+.membership-section {
+  padding: 0.5rem 1.2rem 1rem;
+}
+
+.membership-card {
+  background: var(--card-bg);
+  border-radius: 0.75rem;
+  margin-bottom: 0.85rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: box-shadow 0.2s ease;
+}
+
+.membership-card:hover {
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+.membership-header {
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.membership-header:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.membership-label {
+  font-family: 'Sora', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.membership-label .highlight {
+  color: var(--gold);
+}
+
+.membership-label .rest {
+  color: var(--white);
+  font-weight: 400;
+}
+
+.toggle-icon {
+  color: var(--gold);
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.membership-card.open .toggle-icon {
+  transform: rotate(180deg);
+}
+
+.membership-body {
+  padding: 0 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.membership-card.open .membership-body {
+  max-height: 200px;
+  padding: 0 1rem 1rem;
+}
+
+.membership-desc {
+  font-size: 0.77rem;
+  color: var(--text-muted-custom);
+  line-height: 1.55;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 0.75rem;
+}
+
+/* =============================================
+   CTA Link
+   ============================================= */
+.cta-link-wrapper {
+  padding: 0.5rem 1.2rem 1.5rem;
+}
+
+.cta-link {
+  display: block;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--gold-light);
+  text-decoration: none;
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 2rem;
+  padding: 0.55rem 1rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.cta-link:hover {
+  background: rgba(201, 168, 76, 0.2);
+  color: var(--gold-light);
+}
+
+.cta-link span {
+  margin-left: 0.25rem;
+}
+
+/* =============================================
+   Footer
+   ============================================= */
+.app-footer {
+  background: var(--gold);
+  padding: 0.7rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-text {
+  font-size: 0.65rem;
+  color: var(--dark-bg);
+  font-weight: 600;
+}
+
+.whatsapp-btn {
+  width: 36px;
+  height: 36px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: transform 0.18s, box-shadow 0.18s;
+  text-decoration: none;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+  color: white;
+}
+
+/* =============================================
+   Modal Overrides
+   ============================================= */
+.modal-content {
+  background: var(--card-bg);
+  color: var(--white);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 1rem;
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.modal-title {
+  font-family: 'Sora', sans-serif;
+  color: var(--gold-light);
+}
+
+.modal-body {
+  font-size: 0.88rem;
+  color: var(--text-muted-custom);
+  line-height: 1.6;
+}
+
+.modal-body h6 {
+  color: var(--gold);
+  font-family: 'Sora', sans-serif;
+}
+
+.modal-body hr {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.modal-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-modal-close {
+  background: var(--gold);
+  color: var(--dark-bg);
+  font-weight: 600;
+  border-radius: 2rem;
+  font-size: 0.82rem;
+  border: none;
+  padding: 0.45rem 1.4rem;
+}
+
+.btn-modal-close:hover {
+  background: var(--gold-light);
+  color: var(--dark-bg);
+}
+
+/* =============================================
+   Page Wrapper
+   ============================================= */
+.page-wrapper {
+  display: contents; /* no effect on mobile — phone-shell stays centered */
+}
+
+/* Desktop sidebar hidden on mobile */
+.desktop-panel {
+  display: none;
+}
+
+/* =============================================
+   Member Card Unique Avatar Backgrounds (matching mockup)
+   ============================================= */
+
+/* Benard — teal/green */
+.member-card:nth-child(1) .member-avatar {
+  background: #2a7d6f;
+  border-color: #3dbda8;
+}
+
+/* kigSmall Foot — orange */
+.member-card:nth-child(2) .member-avatar {
+  background: #b85c1a;
+  border-color: #e07830;
+}
+
+/* Caroline (117) — pink/red */
+.member-card:nth-child(3) .member-avatar {
+  background: #8c2a2a;
+  border-color: #c94040;
+}
+
+/* Caroline (321) — blue */
+.member-card:nth-child(4) .member-avatar {
+  background: #1a3a8c;
+  border-color: #3a60d5;
+}
+
+/* =============================================
+   Responsive — Tablet
+   ============================================= */
+@media (min-width: 768px) {
+  body {
+    padding: 3rem 2rem;
+    align-items: center;
+  }
+
+  .phone-shell {
+    max-width: 540px;
+    border-radius: 2rem;
+  }
+
+  .hero-section { padding: 2rem 2rem 2.5rem; }
+  .avatar-wrapper { width: 100px; height: 100px; }
+  .avatar-placeholder { font-size: 2.8rem; }
+  .hero-name { font-size: 1.5rem; }
+  .hero-subtitle { font-size: 0.92rem; max-width: 280px; }
+
+  .members-section { padding: 1.2rem 1.5rem; gap: 1rem; }
+  .member-avatar { width: 42px; height: 42px; font-size: 1.3rem; }
+  .member-name { font-size: 0.8rem; }
+  .member-score { font-size: 1.7rem; }
+
+  .recommendation-section { padding: 1.5rem 1.5rem 0.75rem; }
+  .rec-title { font-size: 1rem; }
+  .rec-text { font-size: 0.85rem; }
+
+  .membership-section { padding: 0.75rem 1.5rem 1.2rem; }
+  .membership-label { font-size: 0.92rem; }
+  .membership-desc { font-size: 0.85rem; }
+
+  .cta-link-wrapper { padding: 0.5rem 1.5rem 1.8rem; }
+  .cta-link { font-size: 0.85rem; padding: 0.65rem 1.2rem; }
+}
+
+/* =============================================
+   Responsive — Desktop
+   ============================================= */
+@media (min-width: 1024px) {
+  body {
+    padding: 2rem 3rem;
+    align-items: flex-start;
+    justify-content: center;
+    background: linear-gradient(135deg, #d0d8e8 0%, #e8ecf3 60%, #d8e0ee 100%);
+  }
+
+  .page-wrapper {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* Show desktop sidebar */
+  .desktop-panel {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 2.5rem 0 2.5rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .desktop-brand {
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-muted-custom);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .desktop-brand-gold { color: var(--gold); }
+
+  .desktop-heading {
+    font-family: 'Sora', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-bg);
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  .desktop-subtext {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.65;
+    margin: 0;
+    max-width: 380px;
+  }
+
+  .desktop-stat-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .desktop-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    background: white;
+    border-radius: 0.75rem;
+    padding: 0.85rem 1.2rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    min-width: 100px;
+  }
+
+  .stat-number {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--dark-bg);
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    color: var(--text-muted-custom);
+    font-weight: 500;
+  }
+
+  .desktop-tips {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.2rem 1.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    border-left: 4px solid var(--gold);
+  }
+
+  .tip-title {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--dark-bg);
+    margin-bottom: 0.75rem;
+  }
+
+  .tip-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .tip-list li {
+    font-size: 0.85rem;
+    color: #4a5568;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+
+  .tip-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  .phone-shell {
+    max-width: 480px;
+    flex-shrink: 0;
+    border-radius: 2.5rem;
+  }
+
+  .hero-section { padding: 2.5rem 2rem 3rem; }
+  .avatar-wrapper { width: 110px; height: 110px; }
+  .avatar-placeholder { font-size: 3rem; }
+  .hero-name { font-size: 1.6rem; }
+  .hero-subtitle { font-size: 0.95rem; max-width: 300px; }
+
+  .members-section {
+    padding: 1.5rem 2rem;
+    gap: 1.1rem;
+  }
+  .member-card { padding: 1rem; }
+  .member-avatar { width: 46px; height: 46px; font-size: 1.4rem; }
+  .member-name { font-size: 0.82rem; }
+  .member-score { font-size: 1.9rem; }
+
+  .recommendation-section { padding: 1.8rem 2rem 0.75rem; }
+  .rec-title { font-size: 1.1rem; }
+  .rec-text { font-size: 0.88rem; }
+
+  .membership-section { padding: 0.75rem 2rem 1.5rem; }
+  .membership-header { padding: 1rem 1.2rem; }
+  .membership-label { font-size: 0.95rem; letter-spacing: 0.1em; }
+  .membership-desc { font-size: 0.88rem; }
+  .membership-card.open .membership-body { padding: 0 1.2rem 1.2rem; }
+
+  .cta-link-wrapper { padding: 0.5rem 2rem 2rem; }
+  .cta-link { font-size: 0.88rem; padding: 0.7rem 1.4rem; }
+
+  .app-footer { padding: 0.9rem 2rem; }
+  .footer-text { font-size: 0.72rem; }
+  .whatsapp-btn { width: 42px; height: 42px; font-size: 1.3rem; }
+}
+
+/* =============================================
+   Responsive — Large Desktop
+   ============================================= */
+@media (min-width: 1280px) {
+  .phone-shell {
+    max-width: 860px;
+  }
+}

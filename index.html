@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fourfront Management</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  
+  <div class="phone-shell">
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <span>9:41</span>
+      <div class="icons">
+        <i class="bi bi-wifi"></i>
+        <i class="bi bi-reception-4"></i>
+        <i class="bi bi-battery-half"></i>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <div class="avatar-wrapper">
+         <span class="avatar-placeholder">👤</span>
+      </div>
+      <div class="hero-name">Michael</div>
+      <p class="hero-subtitle text-white">
+        You've officially joined your first
+        <strong>investment knowledge club!</strong>
+      </p>
+    </div>
+
+    <!-- Members Grid -->
+    <div class="members-section">
+
+      <div class="member-card" data-bs-toggle="tooltip" title="Benard Makodingo" style="background-color: #ffd0ed">
+        <div class="member-info">
+          <div class="member-avatar">🧑</div>
+          <span class="member-name text-black">Benard Makodingo</span>
+        </div>
+        <div class="member-score text-black">350</div>
+      </div>
+
+      <div class="member-card" data-bs-toggle="tooltip" title="kigSmall Foot" style="background-color: #e9ffd0">
+        <div class="member-info">
+          <div class="member-avatar">🦁</div>
+          <span class="member-name text-black">kigSmall Foot</span>
+        </div>
+        <div class="member-score text-black">225</div>
+      </div>
+
+      <div class="member-card" data-bs-toggle="tooltip" title="Caroline Likhoi" style="background-color: #ffffd0">
+        <div class="member-info">
+          <div class="member-avatar">👩</div>
+          <span class="member-name text-black">Caroline Likhoi</span>
+        </div>
+        <div class="member-score text-black">117</div>
+      </div>
+
+      <div class="member-card " style="background-color: #ffd0ed" data-bs-toggle="tooltip" title="Caroline Likhoi" b>
+        <div class="member-info">
+          <div class="member-avatar">👩</div>
+          <span class="member-name text-black">Caroline Likhoi</span>
+        </div>
+        <div class="member-score text-black ">321</div>
+      </div>
+
+    </div>
+
+    <!-- Recommendation -->
+    <div class="recommendation-section">
+      <p class="rec-title">Now let's make you great!</p>
+      <p class="rec-text text-warning">You have shown us where you are doing well and where we can support you
+        to be great!</p>
+      <p class="rec-text">
+          From your profile we recommend these memberships. Pick on
+        that fits you best and start your financial adventure.
+      </p>
+    </div>
+
+    <!-- Membership Cards -->
+    <div class="membership-section">
+
+      <!-- Foundation Membership -->
+      <div class="membership-card" id="foundationCard">
+        <div
+          class="membership-header bg-warning"
+          onclick="toggleMembership('foundationCard')"
+          role="button"
+          aria-expanded="false"
+          aria-controls="foundationBody"
+        >
+          <div class="membership-label ">
+            <span class="highlight text-white">FOUNDATION</span>
+            <span class="rest"> MEMBERSHIP</span>
+          </div>
+          <i class="bi bi-chevron-down toggle-icon"></i>
+        </div>
+        <div class="membership-body" id="foundationBody">
+          <p class="membership-desc">
+            We invest for you, in shares and in the Mansa-X global fund.
+            Service is free online with your personal representative, but
+            service in the office may have extra charges.
+          </p>
+        </div>
+      </div>
+
+      <!-- Economy Membership -->
+      <div class="membership-card" id="economyCard">
+        <div
+          class="membership-header bg-secondary"
+          onclick="toggleMembership('economyCard')"
+          role="button"
+          aria-expanded="false"
+          aria-controls="economyBody"
+        >
+          <div class="membership-label">
+            <span class="highlight">ECONOMY</span>
+            <span class="rest"> MEMBERSHIP</span>
+          </div>
+          <i class="bi bi-chevron-down toggle-icon"></i>
+        </div>
+        <div class="membership-body" id="economyBody">
+          <p class="membership-desc">
+            We will invest your money for you at a guaranteed rate with the
+            Mansa-X global fund. Service is free online with your personal
+            representative, but service in the office may have extra charges.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA Link -->
+    <div class="cta-link-wrapper">
+      <a href="#" class="cta-link" onclick="showDetailsModal(event)">
+        A closer look at the memberships details is available here
+        <span>→</span>
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="app-footer">
+      <span class="footer-text">
+        Fourfront Management &copy; 2023. All Rights Reserved.
+      </span>
+      <a href="https://wa.me/" target="_blank" class="whatsapp-btn" aria-label="Contact via WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+      </a>
+    </div>
+
+  </div> 
+  <div
+    class="modal fade"
+    id="detailsModal"
+    tabindex="-1"
+    aria-labelledby="detailsModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailsModalLabel">Membership Details</h5>
+          <button
+            type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <h6>Foundation Membership</h6>
+          <p>
+            We invest for you, in shares and in the Mansa-X global fund.
+            Service is free online with your personal representative, but
+            service in the office may have extra charges.
+          </p>
+          <hr />
+          <h6>Economy Membership</h6>
+          <p>
+            We will invest your money for you at a guaranteed rate with the
+            Mansa-X global fund. Service is free online with your personal
+            representative, but service in the office may have extra charges.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn-modal-close"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+   <!-- Custom JavaScript -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
