@@ -1,6 +1,4 @@
-/* =============================================
-   Fourfront Management — JavaScript
-   ============================================= */
+ 
 
 /**
  * Toggle membership description open/closed.
@@ -47,7 +45,6 @@ function initTooltips() {
   });
 }
 
-/* ---- Run on DOM ready ---- */
-document.addEventListener('DOMContentLoaded', function () {
+ document.addEventListener('DOMContentLoaded', function () {
   initTooltips();
 });
